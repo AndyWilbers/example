@@ -1,0 +1,376 @@
+/*	_assets/sass/_form.fe.scss */
+
+form.fe {
+	width:100%;
+	max-width:600px;
+	margin:0;
+	padding:10px;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+	form.fe input, form.fe select, form.fe label, form.fe textarea, form.fe p.msg,  {
+		
+		width:400px;
+		margin:0;
+	
+	}
+	
+	form.fe label {
+		font-size:12px;
+		display:block;
+		margin-bottom:3px;
+		margin-top:20px;
+		color:$blue;
+	}
+	form.fe p.msg {
+		font-size:12px;
+		display:block;
+		margin-bottom:20px;
+		margin-top:20px;
+		
+	}
+	
+	form.fe p.msg.warning {
+		color:$red;
+	}
+	
+	
+	form.admin label .ce-radio{
+		display:block;
+		clear:both;
+		float:left;
+		margin-right:5px;
+	}
+	
+	
+	form.fe input, form.fe select,  form.fe textarea   {
+		width:100%;
+		color: $blue;
+		padding: 3px;
+		border: solid 1px $blue;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	
+	
+	}
+	
+	form.fe button, form.fe .button , form.fe a.button  {
+		margin:0;
+		padding: 3px 0 3px 0;
+		width:100%;
+		border: none;
+		font-size:14px;
+		font-weight:bold;
+		text-transform:lowercase;
+		background-color: $green;
+		margin-top:20px;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		display:block;
+		text-align:center;
+		
+	
+	
+		
+	}
+	
+	
+	
+	form.fe button:hover, form.fe .button:hover,form.fe a.button:hover  {
+		cursor:pointer;
+			background-color: $blue;
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	form.admin p.msg {
+		margin-left: 0px;
+		max-width: 600px;
+		min-height:50px;
+	}
+
+	
+	 form.admin input, form.admin select,  form.admin textarea, form.admin p.msg {
+		 border: solid thin $grayblue;
+		display:block;
+		padding: 3px;
+		border-radius:3px;
+		margin-bottom:10px;	
+		font-size:12px;		
+	}
+	
+	 form.admin p.msg.ui-closed {
+		 display:none;
+		 
+	 }
+	
+	form.admin>textarea {
+		min-height:100px;
+		width:600px;
+		min-width:600px;
+		max-width:99%;
+		max-height:400px;
+	}
+	
+	form.admin textarea{
+		min-height:100px;
+		width:95%;
+		min-width:95%;
+		max-width:95%;
+		font-size:10px;
+		
+	}
+	
+    form.admin .tab-container textarea{
+		margin-left:0;
+	}
+		
+	
+	form.admin .group {
+		border:solid thin $green;
+		border-radius:5px;
+		width:96%;
+		margin:0 auto 10px auto;
+		padding:5px;
+		
+	}
+	
+	form.admin select {
+		width:96%;
+		background-color:$grayblue;
+		color: #FFF;
+	}
+	
+	form.admin select[name^="alg_"][name$="_calculation"][value="END"] {
+		background-color:#000;
+	}
+	form.admin select[name^="alg_"][name$="_calculation"][value="STOP"] {
+		background-color:#6C3;
+	}
+	
+	
+	form.admin  input[type="submit"] {  
+		width:96%;
+		background-color: $grayblue;
+		color:#FFF;
+		margin-top:20px; margin-bottom:0;
+	}
+	
+	form.admin  input[type="submit"]:hover {
+		background-color:$blue;
+
+	}
+		
+	form.admin .ident-0 {
+		margin-left:0;
+	}
+			
+
+	
+	form.admin label span {
+		float: left;
+		margin: 0 5px 0 0;
+	}
+	
+	form.admin label span.publish,
+	form.admin label span.ce-radio,
+	 {
+		margin-top: -2px;
+		
+	}
+	
+	form.admin.w600 label,	
+	form.admin.w600 input,
+	form.admin.w600 select {
+		margin-left:0;
+		max-width:600px;
+	}
+	
+	form.admin.w600 textarea {
+		margin-left:0;
+		width:600px;
+	}
+	
+	form.admin.w600 select,
+	form.admin.w600  input[type="submit"]{
+		max-width:608px;
+	}
+/* buttons */
+	form.admin button, form.admin .btn {
+		font-size:10px;
+		background-color:$grayblue;
+		color:#FFF;
+		border-radius:3px;
+		padding:2px;
+		
+	}
+	form.admin button:hover, form.admin .btn:hover {
+		background-color:$blue;
+		color:#FFF;
+	}
+	
+/* tab classes */	
+	form.admin .tab {
+		display:block;
+		float:left;
+		clear:none;
+		padding:3px;
+		padding-left:6px;
+		padding-right:6px;
+		z-index:10;
+		position:relative;
+		background-color:#FFF;
+	
+	}
+	form.admin .tab *:hover,
+	form.admin .tab:hover {
+		cursor:pointer;
+	}
+	
+	form.admin .tab * {
+		display:block;
+		float:left;
+		clear:none;
+	}
+	
+	form.admin .tab label {
+		width:auto;
+		margin-left:4px;
+		margin-top:2px;
+		margin-right:4px;
+
+	}
+	form.admin .tab label .ce-radio {
+		margin-top:2px;
+		margin-right:4px;
+	}
+	
+	form.admin .tab.active {
+		border: solid thin $grayblue;
+		border-bottom: none;
+		border-top-left-radius:3px;
+		border-top-right-radius:3px;
+	
+	}
+	
+	form.admin .tab-container{
+		padding:6px;
+		padding-top:20px;
+		border: solid thin $grayblue;
+		z-index:5;
+		top:-1px;
+		position:relative;
+		max-width:95%;
+		
+	}
+	
+	
+/* table */
+
+	form.admin table,
+	form.admin tbody,
+	form.admin thead,
+	form.admin tr,{width:100%;}
+	
+	form.admin tr {margin: 1px 0  1px 0;}
+	
+	form.admin th, form.admin td{
+		padding: 2px;
+		min-width:inherit;
+	}
+	
+	form.admin td {
+		vertical-align:middle;
+	}
+	
+	form.admin td.v-top {
+		vertical-align:top;
+	}
+	
+	form.admin th,
+	form.admin td label,
+	form.admin td input {
+		margin:0;
+		font-size:10px;
+	
+	}
+	
+	form.admin table select{
+		font-size:10px;
+		padding:2px;
+		margin:0;
+		
+	}
+	
+	
+/* numeric inputs */
+
+	$numbers: (1,2,3,4,5,6, 8,10,12,16,20,24,28,32);	
+	@each $n in $numbers {
+		form.admin .n#{$n}{
+			width: (10+5*$n)+px;
+			text-align:right;
+		}
+	}	
+	
+	
+	form.fe input[type="date"] , form.fe input.date{
+		width:80px;
+		text-align:center;
+	}
+	
+/* Classes */
+
+	form.admin .warning, form.admin .warning.changed{
+		color: $red !important;
+		border-color: $red !important;
+	}
+	
+	form.admin .changed {
+		background-color:#FFC !important;
+		color: $grayblue !important;
+	}
+	
+	form.admin .mce-panel.changed {
+		background-color:#FFC  !important;
+
+	}
+	form.admin .btn.changed {
+		background-color:#F90  !important;
+		color: #FFF !important;
+
+	}
+	
+	form.admin .btn.warning , form.admin .btn.warning.changed {
+		color: #FFF !important;
+		background-color:$red !important;
+		
+	}
+	
+	form.admin a.changed, form.admin a.changed:visited {
+		color:#F90  !important;
+		background-color:transparent !important;
+	}
+	
+	form.admin .tab label.changed {
+		background-color:transparent !important;
+		color:#F90  !important;
+		font-weight:bold;
+		
+	}
+	
+	form.admin .remove {
+		font-style:italic;
+		opacity:0.5;
+	}

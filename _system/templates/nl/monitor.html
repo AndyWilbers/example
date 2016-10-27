@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="admin {$classHtml}" data-sa="path:{$path};">
+	<!-- monitor.html -->
+    <head>
+    	<meta charset="UTF-8">
+    	<title>{ $title }-monitor</title>
+    	<meta name="robots" content="noindex">
+    	<meta name="viewport" content="width=device-width, initial-scale=1" >
+     	<link rel="icon" type="image/png" sizes="96x96" href="{$path}favicon-96x96.png">
+    	<script src="{$path}_js/vendor/modernizr-2.8.3.min.js"></script>
+    	<link rel="stylesheet" href="{$path}_css/vendor/normalize.css" >
+    	<link rel="stylesheet" href="{$path}_css/admin.style.min.css" >
+    	{ $css | t }
+    </head>
+    <body{ $classBody }>
+    	<div class="background"></div>
+    	<header>
+    		<div class="tabs">
+	    		<nav class="menu">
+	    			<a {$activeMonitor}href ="{$path_}monitor" target="_self" title="Overzicht van debug logging.">Debug log</a>
+	    			<a {$activeConstants}href ="{$path_}monitor/constants" target="_self" title="Gedefinieerde constant.">Constants</a>
+	    			<a {$activeSession}href ="{$path_}monitor/session" target="_self" title="$_SESSION variabelen.">Session</a>
+	    			<a {$activeServer}href ="{$path_}monitor/server" target="_self" title="Server parameters.">Server</a>
+	    		</nav>
+    		</div>
+    		<nav class="buttons">
+				<form data-sa="submit:off;">
+					<span class="h12px"><label>level</label></span>
+					{ $options | t }
+				</form> 
+			    <a href = "{$path_}{$route}"  class="btn" title="Reload loging." target="_self">reload</a>
+			</nav>
+    	</header>
+        <main{ $classMain }>
+			{ $content | t }
+        </main>
+        <footer>
+        	<div class= "align-l">
+	        	<strong>locatie:</strong>
+	       		{$crumb|t}
+	        	<strong>user:&nbsp;</strong>{$user.name}&nbsp;({$user.role})
+	        	<a href ="{$path}admin/logout" target="_self" title="KLik om af te sluiten.">logout</a>
+        	</div>
+        	<p class="align-r">
+        		<a href ="{$path_}monitor/info" target="_blank" title="Open phpInfo() on a new tab.">phpInfo()</a>
+        	</p>
+        </footer>
+        <!-- Javascript libraries: -->
+        <script src="{$path}_js/vendor/jquery-1.11.3.min.js" ></script>
+        <script src="{$path}_js/admin.script.min.js"></script>
+        { $js | t }
+        <script src="{$path}_js/admin.docready.min.js"></script>
+	</body>
+</html>

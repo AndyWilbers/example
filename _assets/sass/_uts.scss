@@ -1,0 +1,40 @@
+/*	_assets/sass/_elements.admin.scss */
+
+	body.uts  { font-family:"Courier New", Courier, monospace; color:#FFF; background-color:#111; }
+	
+	.uts main { margin: 20px auto 20px auto; }
+	
+	.uts .pass  { color:#0F0; font-weight:bold;}
+	.uts .fail  { color:#F03;font-weight:bold; }
+	
+/* anchors */	
+   .uts a { color:#0FF; }
+   .uts a:hover { color:#F09; }
+   .uts a:vissited { color: #0FF; }	
+	
+	
+/* buttons */
+	.uts .button, .uts .btn  {
+		background-color:#069;
+		color:#DDD;
+	}
+	.uts  button:hover, .uts .btn:hover {
+		background-color:#0CF;
+		color:#000;
+	}
+	.uts .btn.run  {
+		background-color:#F03;
+		color:#000;
+	}
+	.uts .btn.run:hover { background-color:#C00;}
+	
+/* result */	
+	.uts div.result {
+		margin: 20px 0 20px 0;
+		padding:10px;
+		border: solid 2px #FFF;
+		background-color:#CC9;
+		color:#000;
+		width:800px;
+	}
+	

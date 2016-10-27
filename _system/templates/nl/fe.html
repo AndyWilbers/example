@@ -1,0 +1,101 @@
+<!-- fe.html -->
+<!doctype html>
+<html {$classHtml} data-sa="path:{$path};application:{$application};">
+    <head>
+    <meta charset="UTF-8">
+    <title>{ $title }</title>
+    <meta name="description" content="{ $description }" >
+    <meta name="keywords" content="{ $keywords }" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="icon" type="image/png" sizes="96x96" href="{$path}favicon-96x96.png">
+    <script src="{$path}_js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="{$path}_css/vendor/normalize.css" >
+    <link rel="stylesheet" href="{$path}_css/style.min.css" >
+    {$css|t}
+    </head>
+    <body{$classBody}>
+    	<div id="logo-vbne">
+    		<div class="inner">
+    			<img src="{$path}_img/varen.png" alt="Logo VBNE: een varen; natuurkennis.nl." />
+    		</div>
+    	</div>
+    	<header{$classHeader}>
+    		<div class="inner">
+    		 	<div id="stroke_top"{$stroke_top_hide}>
+       				{$stroke_top|t}
+        		</div>
+	    		<img id="logo-obn" src="{$path}_img/obn.png" alt="Logo OBN: ontwikkeling en beheer natuurkwaliteit." />
+	    		<div class="inner">
+		    		<div class="container">
+		    			<a href="http://www.natuurkennis.nl" target ="_blank" title="Open natuurkennis.nl op een nieuw tabblad.">www.natuurkennis.nl</a>
+		    			<h2><span class="sub">{$application}</span>{$page}</h2>
+		    		</div>
+	    			<nav class="menu">
+	    			    <a id="btn-showmenu" class="btn mobile-first-show{$hide.btn_showmenu}" href="#" target="_self" title="Open menu." data-title="Sluit menu."></a>
+	    				<a {$class.intro} href="{$home}" alt="Algemene informatie over VBNE-sleutels" target="_self"><span class="mobile-first-hide">Algemene introductie beheersleutels</span><span class="mobile-first-show">intro</span></a>
+	    				<a {$class.info} href="{$path}{$last_app}" alt="Informatie over {$last_app}." target="_self"><span class="inline mobile-first-hide">{$last_app} </span>info</a>
+	    				<a {$class.sleutels} href="{$path}{$last_app}/sleutels" alt="Interactive sleutels over {$last_app}." target="_self"><span class="inline mobile-first-hide">{$last_app} </span>sleutels</a>
+	    				{$vennen.info|t}
+	    				{$vennen.sleutel|t}
+	    				<nav class="float-right">
+	    					<a data-sa="ajax:observation.reset;" id="btn-reset" class="btn{$hide.reset}" href="#" target="_self" title="Verwijder alle ingevulde waarnemingen. "></a>
+	    					<a id="btn-help" class="btn{$hide.help}" href="{$path_}help" target="_self" title="Beknopte handleiding gebruik van de {$last_app}sleutel. "></a>
+	    					<a id="btn-device" class="btn{$device.class}{$hide.device}" href="ajax/device" target="_self" 
+	    						title="{$device.title}"
+	    						data-title="{$device.data_title}">
+	    					</a>
+	    					<a 	id="btn-imagsize" class="btn{$lr.class}" href="ajax/imagesize" target="_self" 
+	    						title="{$lr.title}"
+	    						data-title="{$lr.data_title}">
+	    			   		</a>
+	    			   		<a id="btn-account" class="btn{$my_account.class}" href="{$my_account.path}" target="_self" title="{$my_account.title} "></a>
+	    				</nav>
+	    			</nav>
+		    		<nav id="menu-header" class="mobile-first-hide">
+		    		   {$menus.header|t}
+		    		</nav>
+		    		<div{$crumb_hidden}>
+		    			{$crumb|t}
+		    		</div>
+		    		<a class="block float-right{$class.account}"  href="{$path}logout" alt="Sluit uw sessie af door uit te loggen." target="_self">uitloggen</a>
+		    		<div class="hr"></div>
+	    		</div>
+    		</div>
+    	</header>
+        <article{$classArticle}>
+        	<div class="inner">
+	        	<img id="banner" src="{$path}_img/{$application|lc}/{$banner}" alt="Banner natuurkennis.nl ({$application})" />
+	        	<div class="clearfix"></div>
+	        	<div class="{$settings_hide}">
+	        		<h3>
+	        			<a id="btn-settings" class="btn" href="#" target="_self" title="Bewaar deze set of kies een andere"></a>
+	        			<span data-sa="current_selection:{$cs.id};" class="block float-left margin-v-5">{$cs.name}</span>
+	        		</h3>
+	        		<div class="clearfix"></div>
+	        		<div data-sa="settings" {$settings_ui_closed}>
+	        	    	{$settings|t}
+	        		</div>
+	        	</div>
+	        	<div class="clearfix"></div>
+	        	{$article_title|t}
+	        	<nav class="float-right{$previous.class}">
+	    			<a  class="button" href="{$previous.href}" target="_self" title="Terug naar vorige">{$previous.name}</a>	
+	        	</nav>
+	        	<div class="clearfix"></div>
+	        	<p>{$device.name}</p>
+	        	{$test|t}
+	        	{$sections|t}
+				{$menus.children|t}
+			</div>
+        </article>
+        <!-- Javascript libraries: -->
+        <script src="{$path}_js/vendor/jquery-1.11.3.min.js" ></script>
+        <script src="{$path}_js/vendor/jquery.mobile.custom.min.js" ></script>
+        <script src="{$path}_js/script.min.js"></script>
+        {$js|t}
+        <script src="{$path}_js/docready.min.js"></script>
+        {$google_map|t}
+        {$ga|t}
+	</body>
+</html>
+<!-- fe.html -->

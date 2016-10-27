@@ -1,0 +1,40 @@
+<!-- form.calculation_inp.row.html -->
+<tr data-sa="row:inp;indx:{$i};">
+	<td class="v-top"><input class="n4" name="inp_{$i}_position" value ="{$input.position}" placeholder="getal" pattern="^[0-9]+$" type="text"></td>
+	<td class="v-top"><a class="btn slide" data-sa="inp-{$i}" href="#" title="Klik om meer eigenschappen te tonen" data-title="Klik om eigenschappen te verbergen."></a></td>
+	<td class="v-top">
+		<input title="Verwijst naar observatie:&quot;{$input.observation.name}&quot." name="inp_{$i}_input" value ="{$input.input}" placeholder="alleen letters, cijfers en &#34;_&#34;" pattern="^[_a-zA-Z0-9]+$" type="text">
+		<div class="margin-top-20 ui-closed slide-container" data-sa="inp-{$i}">
+		   <label>Observatie</label>
+		   <p class="w400">
+	 	  	 <a target="neighbour"  href="{$path_}admin/observations/{$input.observation.href}" title="Bekijk observatie record in een naastliggende tab-blad." data-text="geen observatie geselecteerd.">{$input.observation.name}</a>
+	 	   </p>
+	 	   <span class= "btn margin-top-5" data-sa="onClick:calculation.popup.get;name:inp_{$i}_FID_OBSERVATION;" title="Klik om een (andere) observatie te selecteren voor deze input.">selecteer observatie</span>
+	 	   <input type="hidden" name ="inp_{$i}_FID_OBSERVATION"  value="{$input.FID_OBSERVATION}"/>
+	 	   <label for="description">Omschrijving</label>
+	 	   <textarea name="inp_{$i}_description" placeholder="text">{$input.description}</textarea>
+	 	   <label>Stuurregels</label>
+	 	   <table id="calculation_act_{$i}">
+	 	   		<thead>
+					<tr>
+						<th width="10px">ID</th>
+							<th width="80px">type</th>
+							<th width="100px">regel</th>
+							<th>parameters</th>
+							<th width="50px">input</th>
+							<th width="15px">msg</th>
+							<th colspan="2" class="txt-r">article</th>
+							<th colspan="2" class="txt-r">calc</th>
+						  	<th width="50px"><a href="#" data-sa="onClick:calculation.inputs.actions.add;" title="Klik om een nieuwe stuurregel toe te voegen.">nieuw</a></th>
+					</tr>
+				</thead>
+				{$tbody|t}
+	 	   </table>
+	   </div>
+	</td>
+	<td class="v-top">
+		<a data-sa="onClick:calculation.inputs.remove;row:inp;indx:{$i};" href="#" title="Klik om deze input te verwijderen." data-label="herstel" data-title="Klik om verwijderen ongedaan te maken." >verwijder</a>
+		<input type="hidden" name ="act_{$i}_to_delete" value="" />
+	</td>
+</tr>
+<!-- form.calculation_inp.row.html -->

@@ -1,0 +1,41 @@
+<!-- admin.index.html -->
+<h2 class="margin-vertical-0">Index: {$label_plu|lc}<a id="btn-help" class="btn square-12" href="#" target="_self" title="Klik om een korte uitleg te tonen" data-title="Klik om de onderstaande uitleg te verbergen"></a></h2>
+<div class="hr margin-vertical-0"></div>
+<nav class="margin-top-10 margin-bottom-20">
+	<a href="{$path_}admin/{$root_path}_new_category">nieuwe category</a>
+	<span> | </span>
+	<a href="{$path_}admin/{$root_path}_new">nieuw {$label|lc}</a>
+</nav>
+<div id="help" class= "bg-obn-shadeblue padding-v-5 ui-closed max-width-600">
+	<div class="inner margin-v-0">
+		<p>
+			Overzicht van alle {$label_plu|lc} verdeeld in categorie&euml;n, waarbij
+			<span class="obn-green">{$label_plu|lc} in het groen zijn aangeven</span> en
+			<span class="obn-blue">categorie&euml;n  blauw zijn.</span>
+			Door te klikken op een naam, kunnen de instellingen van {$label_plu|lc} en categorie&euml;n
+			worden aangepast. Door een klik op de rode of groene cirkel voor de naam, kan worden aangeven
+			of het item wel of niet getoond wordt:
+		</p>
+		<h3>Publicatie status:</h3>
+		<p class="margin-vertical-5">
+			<span class="publish"></span>wordt getoond in de applicatie.
+		</p>
+		<p class="margin-vertical-5">
+			<span class="publish not"></span>wordt niet getoond in de applicatie.
+		</p>
+		<p class="ident-17 margin-vertical-5">
+			Merk op: wanneer een categorie niet getoond wordt, worden ook de ondeliggende
+			{$label_plu|lc} en categorie&euml;n niet getoond, ongeacht de status van het item zelf.
+		</p>
+	</div>
+</div>
+<div>
+	{$content|t}
+	{$form_category_change_positions|t}
+</div>
+<h2 class="margin-bottom-0 margin-top-40">{$label_plu} die niet in een categorie zijn ingedeeld</h2>
+<div class="hr margin-vertical-0"></div>
+<div>
+	{$no_cat|t}
+</div>
+<!-- admin.index.html -->

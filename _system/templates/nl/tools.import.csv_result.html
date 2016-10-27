@@ -1,0 +1,36 @@
+<!-- tools.import.csv.result.html -->
+<h2>{$file_name}:</h2>
+<h2>Import resultaat:</h2>
+<p class="max-width-600">
+	Het csv bestand &quot;{$file_name}&quot; is ingeladen:
+</p>
+<table class="max-width-600">
+	<thead>
+	<tr>
+			<td width="50px">&nbsp;</td>
+			<td width="20px">totaal</td>
+			<td width="20px">fail</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>ALL</td>
+			<td>{$check.count.total.all}</td>
+			<td>{$check.count.total.fail}</td>
+		</tr>
+		<tr>
+			<td>INSERT</td>
+			<td>{$check.count.insert.all}</td>
+			<td>{$check.count.insert.fail}</td>
+		</tr>
+		<tr>
+			<td>UPDATE</td>
+			<td>{$check.count.update.all}</td>
+			<td>{$check.count.update.fail}</td>
+		</tr>
+	</tbody>
+</table>
+{$log|t}
+<h3>Kies een ander bestand voor import:</h3>
+{$menu|}
+<!-- tools.import.csv.result.html -->

@@ -1,0 +1,33 @@
+<!-- form.calculation_alg.row.html -->
+<tr data-sa="row:alg;indx:{$i};">
+	<td>
+		<input class="n4" name="alg_{$i}_position" value ="{$record.position}" placeholder="getal"  type="text">
+	</td>
+	<td>
+		<input name="alg_{$i}_rule" value ="{$record.rule}" placeholder="alleen letters, cijfers en &#34;_&#34;"  type="text">
+	</td>
+	<td>
+		<select name="alg_{$i}_calculation" value="{$record.calculation}">
+			{$options|t}
+		</select>					
+	</td>
+	<td>
+		<input name="alg_{$i}_params" value="{$record.params}" placeholder="parameters door &quot;;&quot; gescheiden" type="text"/>
+	</td>
+	<td class="txt-r" width="15px">
+		<a href="{$path_}admin/articles/{$record.article.href}"  target="neighbour" data-link="alg_{$i}_FID_ARTICLE" title="{$record.article.title}" data-title="{$record.article.data_title}">{$record.FID_ARTICLE_txt}</a>
+	</td>	
+	<td width="15px">
+		<a class="btn change" data-sa="onClick:calculation.popup.get;name:alg_{$i}_FID_ARTICLE;" href="#" title="Selecteer een ander artikel" ></a>
+		<input type="hidden" name ="alg_{$i}_FID_ARTICLE" value="{$record.FID_ARTICLE}"/>
+	</td>
+	<td class="txt-r" width="15px">
+		<a href="{$path_}admin/calculations/{$record.calculation_next.href}"  target="neighbour" data-link="alg_{$i}_FID_CALCULATION_NEXT" title="{$record.calculation_next.title}" data-title="{$record.calculation_next.data_title}">{$record.FID_CALCULATION_NEXT_txt}</a>
+	</td>
+	<td width="15px">
+		<a class="btn change" data-sa="onClick:calculation.popup.get;name:alg_{$i}_FID_CALCULATION_NEXT;" href="#" title="Selecteer een andere berekening" ></a>
+		<input type="hidden" name ="alg_{$i}_FID_CALCULATION_NEXT" value="{$record.FID_CALCULATION_NEXT}"/>
+	</td>						
+	<td><a data-sa="onClick:calculation.algorithms.remove;row:alg;indx:{$i};" href="#" title="Klik om deze rekenregel te verwijderen." data-label="herstel" data-title="Klik om verwijderen ongedaan te maken." >verwijder</a></td>
+</tr>
+<!-- form.calculation_alg.row.html -->

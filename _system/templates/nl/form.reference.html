@@ -1,0 +1,28 @@
+<!-- form.reference.html -->
+{$header|t}
+<form id="{$table}-ar" class="admin" method="post" action="{$application_path}references/save" data-callback="form.add_record">
+    <div>
+		<a class="btn" data-sa="reload">cancel</a>
+		<label><span>publicatie status</span><span data-sa="onClick:admin.toggle_publish;name:note;id:{$ar.ID};" class="{$class_publish}"></span></label>
+		<h3 class="margin-top-20">ID: {$ar.ID}</h3>
+		<label>Titel</label>
+		<input  type="text" name="name" value ="{$ar.name}" placeholder="titel" required>
+	</div>
+	<div >
+	    <label>Auteur(s)</label>
+		<input  type="text" name="author" value ="{$ar.author}" placeholder="auteur(s)" >
+		<label >Publicatie jaar</label>
+		<input  type="text" name="YYYY" value ="{$ar.YYYY}" placeholder="jaar van publicatie (4 cijfers)"  >
+		<label>Pagina's</label>
+		<input type="text" name="pages" value ="{$ar.pages}" placeholder="pagina's" >
+		<label>Categorie</label>
+		{$select_category|t}
+		<p class="msg ui-closed"></p>
+		<input  type="submit" value="save">
+	</div>
+	<input type="hidden" name ="ID" value="{$ar.ID}"/>
+	<input type="hidden" name ="recordname" value="{$record_name}"/>
+	<input type="hidden" name ="table" value="reference"/>
+	<input type="hidden" name ="root_path" value="{$root_path}" />
+</form>
+<!-- form.reference.html -->

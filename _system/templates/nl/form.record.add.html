@@ -1,0 +1,19 @@
+<!-- form.record.add.html -->
+<form id="{$table}-add" class="admin add max-width-400 ui-closed" action="{$application_path}admin/add_record" data-callback="form.add_record"  method="POST">
+	<a class="btn" data-sa="reload">cancel</a>
+	<label><span>publicatie status</span><span data-sa="onClick:admin.toggle_publish;name:article;id:new;" class="publish not block margin-bottom-10"></span></label>
+	<br/>
+	<label>Naam</label>
+	<input name="name" type="text" placeholder="naam" required>
+	{$inputfield_path|t}
+	<label{$hide_position}>Positie</label>
+	{$select_position|t}
+	<p class="msg ui-closed"></p>
+	<input  type="submit" value="maak aan">
+	<input type="hidden" name ="FID_CAT" value="{$ar.ID}">
+	<input type="hidden" name ="ID" value="new"/>
+	<input type="hidden" name ="table" value="{$table}"/>
+	<input type="hidden" name ="recordname" value="{$record_name}"/>
+	<input type="hidden" name ="root_path" value="{$root_path}"/>
+</form>
+<!-- form.record.add.html -->

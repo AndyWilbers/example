@@ -1,0 +1,18 @@
+<!-- form.pdf.meta.result.html -->
+<a href="{$path_}sleutels/calculaties/result?id={$ID}" class="button float-right margin-top-10" title="Terug naar het resultaat.">terug</a>
+<form class="fe"  method="POST" action="{$path_}pdf?id={$ID}">
+	<label>Title:</label>
+	<input type="text"   name="title" id="title" value="{$meta.title}"/>
+	<label>Waarnemer:</label>
+	<input type="text"   name="author" id="author" value="{$meta.author}"/>
+	<label>Datum:</label>
+	<input type="text"  class="date" name="date" id="date" value="{$meta.date}" placeholder="dd-mm-yyyy"/>
+	<label>Opmerkingen:</label>
+	<textarea rows="10" cols="50" name="remarks" id="remarks">{$meta.remarks}</textarea>
+	<div id="msg"></div>
+	<input type="hidden" name="create" id="create" value ="create"/>
+	<input type="hidden" name="ID" id="ID" value ="{$ID}"/>
+	<div class="clearfix"></div>
+	<button class="margin-top-40">maak pdf</button>
+</form>
+<!-- form.pdf.meta.result.html -->

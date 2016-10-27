@@ -1,0 +1,56 @@
+@mixin rc($radius) {
+    
+    $class: '.rc-'+$radius;
+  
+    #{$class} {
+		 border-radius: $radius+px;
+		
+	 };
+	 
+	 $class: '.rc-top-'+$radius;
+	 #{$class} {
+		 	border-top-left-radius: $radius+px;
+			border-top-right-radius: $radius+px;
+	 };
+	 
+	 $class: '.rc-bottom-'+$radius;
+	 #{$class} {
+		 	border-bottom-left-radius: $radius+px;
+			border-bottom-right-radius: $radius+px;
+	 };
+	 
+	 $class: '.rc-left-'+$radius;
+	 #{$class} {
+		 	border-top-left-radius: $radius+px;
+			border-bottom-left-radius: $radius+px;
+	 };
+	 
+	 $class: '.rc-right-'+$radius;
+	 #{$class} {
+		 	border-top-right-radius: $radius+px;
+			border-bottom-right-radius: $radius+px;
+	 };
+	 
+	 $class: '.rc-top-left-'+$radius;
+	 #{$class} {
+		 	border-top-left-radius: $radius+px;
+	 };
+	 
+	 $class: '.rc-bottom-left-'+$radius;
+	 #{$class} {
+		 	border-bottom-left-radius: $radius+px;
+	 };
+	 
+	 $class: '.rc-top-right-'+$radius;
+	 #{$class} {
+		 	border-top-right-radius: $radius+px;
+	 };
+	 
+	 $class: '.rc-bottom-right-'+$radius;
+	 #{$class} {
+			border-bottom-right-radius: $radius+px;
+	 };
+	 
+  
+}
+

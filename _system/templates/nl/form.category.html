@@ -1,0 +1,70 @@
+<!-- form.category.html -->
+<header>
+	<nav>
+	<a class="h2" href ="{$path_}admin/{$root_path}" target="_self" title="Overzicht van de {$label_plu|lc} per categorie.">index<span class="sub">({$label_plu|lc})</span></a>
+	<span> | </span>
+	<span{$ar_parent_cat.hide}><a class="h2" href="{$href_prev}" target = "_self"  title="De bovenliggende categorie van dit item.">{$ar_parent_cat.name}</a> | </span>
+	<h2 class="inline">{$ar.name}<a id="btn-help" class="btn square-12" href="#" target="_self" title="Klik om een korte uitleg te tonen" data-title="Klik om de onderstaande uitleg te verbergen"></a></h2>
+   </nav>
+</header>
+<div class="hr margin-vertical-0"></div>
+<div id="help" class= "bg-obn-shadeblue padding-v-5 ui-closed max-width-600">
+	<div class="inner margin-v-0">
+		<p>
+			Op deze pagina kunnen de eigenschappen van een categorie worden aangepast.
+			Bovenin staat een formulier om de naam en path aan te passen. "path" is de naam
+			van de categorie zoals deze in de url gebruikt wordt. Zorg er daarom voor dat dit
+			veld alleen letters, cijfers en het underscore "_" zijn toegestaan.
+		</p>
+		<h3>Publicatie status:</h3>
+		<p class="margin-vertical-5">
+			<span class="publish"></span>wordt getoond in de applicatie.
+		</p>
+		<p class="margin-vertical-5">
+			<span class="publish not"></span>wordt niet getoond in de applicatie.
+		</p>
+		<p class="ident-17 margin-vertical-5">
+			Merk op: wanneer een categorie niet getoond wordt, worden ook de ondeliggende
+			{$label_plu|lc} en categorie&euml;n niet getoond, ongeacht de status van het item zelf.
+		</p>
+		<p>
+			Onder het bovenste formulier staat een overzicht van de sub-categorie&euml;n en 
+			de {$label_plu|lc} die bij deze categorie horen. Door een klik op "toevoegen" wordt
+			er een formulier getoond, waarmee een {$label|lc} dan wel een sub-categorie kan worden
+			aangemaakt. Een klik op "ordenen" opent een formulier waarmee de volgorde van de sbu-categorie&euml;n
+			dan wel {$label_plu|lc} kan worden veranderd.
+		</p>
+		<p>
+			Na een aanpassing gedaan krijgt het invulveld een gele achtergrond:
+			de getoonde waarde is veranderd, maar nog niet opgeslagen in de database.
+		</p>
+	</div>
+</div>
+<div class="grid G12">
+	<div class="col W6">
+		<div class="inner  margin-vertical-0">
+			<h2 class="margin-bottom-5 margin-top-20">Categorie:</h2>
+			<form id="{$table_cat}-ar" class="admin max-width-400" method="POST" action="{$application_path}admin/save_category" data-callback="form.save_category">
+				<a class="btn" data-sa="reload">reload</a>
+				<label class="ident-0"><span>publicatie status</span><span data-sa="onClick:admin.toggle_publish;name:{$record_name}_cat;id:{$ar.ID};" class="{$class_publish}"></span></label>
+				<h3 class="ident-0 margin-top-20">ID: {$ar.ID}</h3>
+				<label>Naam</label>
+				<input name="name" value ="{$ar.name}" placeholder="naam" type="text" required>
+				<label>Path</label>
+				<input name="path" value ="{$ar.path}" placeholder="alleen letters, cijfers en &#34;_&#34;" pattern="^[_a-zA-Z0-9]+$" type="text">
+				<label>Bovenliggende categorie</label>
+				{$select_category|t}
+				{$select_article_cat|t}
+				{$select_article|t}
+				<p class="msg ui-closed"></p>
+				<input type="hidden" name ="ID" value="{$ar.ID}"/>
+				<input type="hidden" name ="table" value="{$table_cat}"/>
+				<input type="hidden" name ="recordname" value="{$record_name}"/>
+				<input type="hidden" name ="root_path" value="{$root_path}"/>
+				<input  type="submit" value="save">
+			</form>
+		</div>
+	</div>
+</div>
+{$subforms|t"}
+<!-- form.category.html -->

@@ -1,0 +1,24 @@
+<!-- form.category.change_positions.html -->
+<form id="{$table_cat}-change-positions" class="admin add max-width-400 ui-closed margin-top-20" action="{$application_path}admin/change_positions" data-callback="form.change_positions" method="POST">
+	<a class="btn" data-sa="reload">cancel</a>
+	<table>
+		<thead>
+			<tr>
+				<th>Naam</th>
+				<th width="25px">positie</th>
+			</tr>
+		</thead>
+		{$tbody|t}
+	</table>
+	<p class="msg ui-closed"></p>
+	<input type="submit" value="pas aan" />
+	<input type="hidden" name="table" value="{$table_cat}" />
+	<input type="hidden" name ="ID" value="positions" />
+	<input type="hidden" name ="FID" value="{$ar.ID}" />
+	<input type="hidden" name ="recordname" value="{$record_name}" />
+	<input type="hidden" name ="root_path" value="{$root_path}" />
+</form>
+<a data-sa="toggle_by_id:{$table_cat}-change-positions;ul:{$table_cat};" class="h2 block margin-top-5 ident-10" href="#" target="_self" 
+			title="Open formulier voor waarmee de volgorde aangepast kan worden" data-title="Verberg formulier"
+			data-label = "sluit" >pas volgorde aan</a>
+<!-- form.category.change_positions.html -->

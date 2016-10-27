@@ -1,0 +1,10 @@
+<!-- favorite.article.html -->
+<h3 class="title no-hover" data-id="{$record.ID}">
+	<span class="float-left">{$record.name |t}</span>
+	<a  data-fe="remove_from_favorite:{$record.ID};"  class="btn remove float-right" href="#" target="_self" title="Verwijder artikel &qout;{$record.name}&qout; uit favorieten"></a>
+	<div class="clearfix"></div>
+</h3>
+<div data-id="{$record.ID}">
+	{$record.content}
+<div>
+<!-- favorite.article.html  -->

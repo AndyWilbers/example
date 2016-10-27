@@ -1,0 +1,50 @@
+<!-- form.calculation.html -->
+{$header|t}
+<form id="{$table}-ar" class="admin" data-sa="submit:{$application_path}calculation/save;callback:form.add_record" method="post" action="" >
+	<div class= "w600">
+		<a class="btn" data-sa="reload">cancel</a>
+		<label><span>publicatie status</span><span data-sa="onClick:admin.toggle_publish;name:calculation;id:{$ar.ID};" class="{$class_publish}"></span></label>
+		<h3 class="margin-top-20">ID: {$ar.ID}</h3>
+		<label >Naam</label>
+		<input  type="text" name="name" value ="{$ar.name}" placeholder="naam" required>
+		<label >Path</label>
+		<input name="path" value ="{$ar.path}" placeholder="alleen letters, cijfers en &#34;_&#34;" pattern="^[_a-zA-Z0-9]+$" type="text">	
+		<label>Categorie</label>
+		{$select_category|t}
+		<label for="description">Omschrijving</label>
+		<textarea name="description" placeholder="text">{$ar.description}</textarea>
+		<label>Introductie artikel</label>
+		{$select_article_category|t}
+		{$select_fid_article|t}
+	</div>	
+	<div class= "ident-10">
+		<div class="margin-top-20">
+			<nav class="tab{$tab.inp.active}"  data-sa="group:subforms;show:inputs;tab:inp"><label>inputs</label></nav>
+			<nav class="tab{$tab.alg.active}" 	data-sa="group:subforms;show:algorithm;tab:alg;"><label>algoritme</label></nav>
+			<nav class="tab{$tab.sco.active}" 	data-sa="group:subforms;show:scores;tab:sco;"><label>scores</label></nav>
+			<div class="clearfix"></div>
+		</div>
+		<div class="tab-container{$tab.inp.container}" data-sa="group:subforms;name:inputs;">
+			{$inputs|t}
+		</div>
+		<div class="tab-container{$tab.alg.container}" data-sa="group:subforms;name:algorithm;">
+			{$algorithm|t}
+		</div>
+		<div class="tab-container{$tab.sco.container}" data-sa="group:subforms;name:scores;">
+			{$scores|t}
+		</div>
+	</div>
+	<div class= "w600 margin-top-20 ident-10">
+		<p class="msg ui-closed "></p>
+		
+	</div>
+	<div class= "w600" >
+		<input type="submit" value="save" />
+	</div>
+	<input type="hidden" name ="ID" value="{$ar.ID}"/>
+	<input type="hidden" name ="recordname" value="{$record_name}"/>
+	<input type="hidden" name ="model" value="calculation"/>
+	<input type="hidden" name ="root_path" value="{$root_path}" />
+	<input type="hidden" name ="tab" value="{$tab.val}" />
+</form>
+<!-- form.calculation.html -->

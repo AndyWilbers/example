@@ -1,0 +1,26 @@
+<!-- form.image.html -->
+<form id="images" class="admin" method="post" action="" >
+	{$imageselector|t}
+	<div class="hr"></div>
+	<div  class="grid G12">	
+		<div class="col W3">
+			<div >
+				<nav  class="btn w40 txt-c bg-obn-green" title="Maak een nieuwe directory aan" data-popup="popup_dir_new">nieuw</nav>
+				
+			</div>
+		</div>
+		<div class="col W9">
+			<div >
+				<nav id="toggle_view" class="btn w60 txt-c " title="{$toggle_view_title}" data-title="{$toggle_view_data_title}" data-text="{$toggle_view_data_text}">{$toggle_view_text}</nav>
+				<nav id="save_alt" class="btn w60 txt-c  bg-obn-green{$save_alt_hidden}" title="Sla de alt teksten op in de database">save-alt</nav>
+				<nav id="image_move" class="btn w60 txt-c " title="Verplaats de geslecteerde afbeelingen." data-popup="popup_image_move">verplaats</nav>
+				<nav class="btn w60 txt-c bg-obn-purper" data-popup="popup_image_upload">upload</nav>
+			</div>
+		</div>
+	</div>
+	<div id= "msg">
+		{$message|t}
+	</div>
+	<input type="hidden" name="ID" value =""/>
+</form>
+<!-- form.image.html -->

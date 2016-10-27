@@ -1,0 +1,54 @@
+<!-- form.my_observation.html -->
+<a href="{$path_}my_observations" class="button float-right margin-top-10" title="Terug naar het overzicht.">mijn sets met antwoorden</a>
+<form class="fe" action="save_my_observation">
+	<label>Naam:</label>
+	<input type="text"   name="name" id="name" value="{$record.name}"/>
+	<label>Datum:</label>
+	<input type="text"  class="date" name="date" id="date" value="{$record.date}" placeholder="dd-mm-yyyy"/>
+	<div data-sa="show:device;"{$hide.desktop}>
+		<label>Locatie:</label>
+		<table style="max-width:280px;">
+			<tbody  >
+				<tr>
+					<td style="min-width:25px; vertical-align: middle;"><a id="btn-location-ne" class="btn" href="#" target="_self" title="Gebruik uw hudige locatie voor het vastleggen van de noordoost hoek van het gebied."></a></td>
+					<td style="min-width:15px; vertical-align: middle;">N.O.</td>
+					<td style="vertical-align: middle; text-align: right;">{$record.NE_LATtxt}</td><td style="vertical-align: middle; text-align: right;">{$record.NE_LNGtxt}</td>
+				</tr>
+				<tr>
+					<td style="min-width:25px; vertical-align: middle"><a id="btn-location-sw" class="btn" href="#" target="_self" title="Gebruik uw hudige locatie voor het vastleggen van de zuidwest hoek van het gebied."></a></td>
+					<td style="min-width:15px; vertical-align: middle;">Z.W.</td>
+					<td style="vertical-align: middle; text-align: right;">{$record.SW_LATtxt}</td><td style="vertical-align: middle; text-align: right;">{$record.SW_LNGtxt}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="clearfix"></div>
+	<div data-sa="show:device;"{$hide.mobile}>
+	    <label>Locatie:</label>
+	    	<a href="{$path_}geolocation?id={$record.ID}" class="button" title="Zoek locatie op met behulp van Google Maps.">Google Map</a><br/>
+	    	<table>
+				<tbody>
+					<tr>
+						<td>Noord-oost</td><td>{$record.NE_LATtxt}</td><td>{$record.NE_LNGtxt}</td>
+					</tr>
+					<tr>
+						<td>Zuid-west</td><td>{$record.SW_LATtxt}</td><td>{$record.SW_LNGtxt}</td>
+					</tr>
+				</tbody>
+		</table>
+	</div>
+	<input class="w100" type="hidden" name="NE_LAT" id="NE_LAT" value="{$record.NE_LAT}" />
+	<input class="w100" type="hidden" name="NE_LNG" id="NE_LNG" value="{$record.NE_LNG}" />
+	<input class="w100" type="hidden" name="SW_LAT" id="SW_LAT" value="{$record.SW_LAT}" />
+    <input class="w100" type="hidden" name="SW_LNG" id="SW_LNG" value="{$record.SW_LNG}" />
+	<label>Deel met:</label>
+	<table>
+		{$viewers|t}
+	</table>
+	<div id="msg"></div>
+	<input type="hidden" name="ID" id="ID" value ="{$record.ID}"/>
+	<div class="clearfix"></div>
+	<button class="margin-top-40">save</button>
+	
+</form>
+<!-- form.my_observation.html -->

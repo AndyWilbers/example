@@ -1,0 +1,34 @@
+<!-- form.category.subforms.html -->
+<div class="grid G12">
+	<div class="col W6">
+		<div class="inner  margin-vertical-0">
+			<h2 class="margin-bottom-5 margin-top-20">Onderliggende categorie&eumln:</h2>
+			{$cat_menu|t}
+			<div>
+				{$form_category_change_positions|t}
+			</div>
+			<div>
+				{$form_add_child_category|t}
+				<a	data-sa="toggle_by_id:{$table}-category-add;" class="h2 block margin-top-5 ident-10" href="#" target="_self" 
+					title="Open formulier voor  waarmee een sub-categorie aangemaakt kan worden" data-title="Verberg formulier"
+					data-label = "sluit" >voeg een categorie toe</a>
+			</div>
+		</div>
+	</div>
+	<div class="col W6">
+		<div class="inner margin-vertical-0">
+			<h2 class="margin-bottom-5 margin-top-20">{$label_plu}:</h2>
+			{$record_menu|t}
+			<div>
+				{$form_record_change_positions|t}
+			</div>
+			<div>
+				{$form_add_record|t}
+				<a data-sa="toggle_by_id:{$table}-add;" class="h2 block margin-top-5 ident-10" href="#" target="_self" 
+				title="Open formulier voor waarmee een {$label|lc} aangemaakt kan worden" data-title="Verberg formulier"
+				data-label = "sluit" >voeg een {$label|lc} toe</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- form.category.subforms.html -->

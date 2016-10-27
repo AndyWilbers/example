@@ -1,0 +1,44 @@
+<!-- form.calculation_act.row.html -->
+<tr data-sa="row:act_{$i};indx:{$ii};">
+	<td>{$ii}</td>
+	<td>
+		<select name="act_{$i}_{$ii}_type" value="{$record.type}">
+			<option value="message"{$record.type_message}>message</option>
+			<option value="show"{$record.type_show}>show</option>
+			<option value="article"{$record.type_article}>article</option>
+			<option value="calculation"{$record.type_calculation}>calculation</option>
+			<option value="report"{$record.type_report}>report</option>
+		</select>
+	</td>
+	<td>
+		<select name="act_{$i}_{$ii}_rule" value="{$record.rule}">
+			{$options|t}
+		</select>					
+	</td>
+	<td>
+		<input name="act_{$i}_{$ii}_params" value="{$record.params}" placeholder="parameters door &quot;;&quot; gescheiden" type="text"/>
+	</td>
+	<td>
+		<input class="n5" name="act_{$i}_{$ii}_input" value="{$record.input}" placeholder="NULL" type="text" />
+	</td>
+	<td>
+		<a class="btn text" data-sa="onClick:calculation.popup.get;name:act_{$i}_{$ii}_description;" href="#" title="Bewerk message: &quot;{$record.description}&quot;." ></a>
+		<input type="hidden" name ="act_{$i}_{$ii}_description" value="{$record.description}"/>
+	</td>
+	<td class="txt-r" width="15px">
+		<a href="{$path_}admin/articles/{$record.article.href}"  target="neighbour" data-link="act_{$i}_{$ii}_FID_ARTICLE" title="{$record.article.title}" data-title="{$record.article.data_title}">{$record.FID_ARTICLE_txt}</a>
+	</td>	
+	<td width="15px">
+		<a class="btn change" data-sa="onClick:calculation.popup.get;name:act_{$i}_{$ii}_FID_ARTICLE;" href="#" title="Selecteer een ander artikel" ></a>
+		<input type="hidden" name ="act_{$i}_{$ii}_FID_ARTICLE" value="{$record.FID_ARTICLE}"/>
+	</td>
+	<td class="txt-r" width="15px">
+		<a href="{$path_}admin/calculations/{$record.calculation_next.href}"  target="neighbour" data-link="act_{$i}_{$ii}_FID_CALCULATION_NEXT" title="{$record.calculation_next.title}"  data-title="{$record.calculation_next.data_title}">{$record.FID_CALCULATION_NEXT_txt}</a>
+	</td>
+	<td width="15px">
+		<a class="btn change" data-sa="onClick:calculation.popup.get;name:act_{$i}_{$ii}_FID_CALCULATION_NEXT;" href="#" title="Selecteer een andere berekening" ></a>
+		<input type="hidden" name ="act_{$i}_{$ii}_FID_CALCULATION_NEXT" value="{$record.FID_CALCULATION_NEXT}"/>
+	</td>						
+	<td><a data-sa="onClick:calculation.inputs.actions.remove;row:act_{$i};indx:{$ii};" href="#" title="Klik om deze stuurregel te verwijderen." data-label="herstel" data-title="Klik om verwijderen ongedaan te maken." >verwijder</a></td>
+</tr>
+<!-- form.calculation_act.row.html -->

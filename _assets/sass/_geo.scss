@@ -1,0 +1,62 @@
+/*	_assets/sass/_geo.scss */
+
+	#canvas {
+		
+		background-color:#CCC;
+		position:relative;
+		margin: 20px auto 20px auto;
+		
+		 width: 90%;
+		 max-width: 400px;
+		
+	}
+	
+	#map { 
+		position:absolute;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		z-index:10;
+	}
+	#area{
+		z-index:100;
+		border:dotted thin #333;
+		width:auto;
+		height:auto;
+		position:absolute;
+		top: 20%;
+		left:20%;
+		margin:0;
+		bottom:20%;
+		right:20%;
+	
+		
+	}
+	
+	#NE, #SW {
+		position:absolute;
+		width:10px;
+		height:10px;
+		z-index:110;
+		border: solid 2px #F00;
+	}
+	
+	#NE {
+		border-left:none;
+		border-bottom:none;
+		top: 0;
+		right:0;
+		
+	}
+	 #NE:hover, #SW:hover {
+		 cursor:nesw-resize;
+	
+	}
+	
+	#SW {
+		border-top:none;
+		border-right:none;
+		bottom:0;
+		left:0;
+	}

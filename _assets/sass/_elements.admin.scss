@@ -1,0 +1,274 @@
+/*	_assets/sass/_elements.admin.scss */
+
+	p, a, td , th  .p, .a, .td , .th { font-size:10px; }
+	
+	h1>.sub, h2>.sub, h3>.sub, h4>.sub, h5>.sub, h6>.sub
+	.h1>.sub, .h2>.sub, .h3>.sub, .h4>.sub,  .h5>.sub,  .h6>.sub 
+	{
+		color: $shadegreen;
+	}
+	
+	label { color:$green; }
+	
+/* headers */
+	h2, h2 a, .h2 { font-size:12px; }	
+	h3, h3 a,  h3 { font-size:11px; }	
+	h4, h4 a, .h4 { font-size:10px; }	
+	h5, h5 a, .h5 { font-size:9px; }	
+	h6, h6 a, .h6 { font-size:8px; }	
+	
+/* anchors */	
+	a {
+		color: $blue;
+		text-decoration:none;
+		font-weight:bold;
+	}
+	a:hover {
+		color: $red;;
+		text-decoration:underline;
+	}
+	a:vissited {
+		color: $blue;
+		
+	}
+	
+/* buttons */
+	button, .btn  {
+		display: inline-block;
+		float:none;
+		clear:both;
+		margin-bottom: 10px;
+		background-color: $graygreen;
+		color: #FFF;
+		border:none;
+		border-radius: 5px;
+		padding:5px;
+		
+	}
+	button.danger, .btn.danger{
+		background-color: $red;
+	}
+	button.danger:hover, .btn.danger:hover{
+		background-color: #000;
+		color: #FFF;
+	}	
+	
+	$sizes: (12,24,36);	
+	@each $s in $sizes {
+		
+		button.square-#{$s}, .btn.square-#{$s}  {
+			margin: 0 $s/3+px 0 $s/3+px;
+			clear:none;
+			height:$s+px;
+			width:$s+px;
+			border-radius: $s/4+px;
+			padding:0;;
+			background-position:center;
+			background-repeat:no-repeat;
+			background-size:80%;
+		}
+		
+	
+	}
+	
+	 button:hover, .btn:hover {
+		cursor:pointer;
+		text-decoration:none;
+		background-color:$shadegreen;
+		color:#000;
+	}
+	
+/* #btn-help */	
+   #btn-help{ background-image:url(img/icon_info.svg); }
+	
+/* table elements */	
+	 tbody tr:nth-child(odd) { background-color: $shadeblue; }
+	 td,  th {
+		text-align:left;
+		padding:5px;
+		padding-right:20px;
+		min-width:50px; max-width:800px;
+		vertical-align:top;
+		text-wrap:normal;
+	}
+	
+	
+	
+/* main */	
+	main,.main{
+		position:relative;
+		width: 98%; max-width:none;
+		margin: $adminFixexHeader+10+px auto $adminFixexFooter+20+px 1%;
+		z-index:10;
+	
+		
+	}
+	
+
+/* header */
+	body>header h1 {
+		margin: 5px 0 0 1%;
+		font-variant:small-caps;
+	
+		
+		color:#FFF;
+		line-height:1;
+		
+		
+	}
+	body>header {
+		position:fixed; top:0; left:0; z-index:100;
+		width:100%; height: $adminFixexHeader+px;
+		background-color: $grayblue;
+		border-bottom: solid 10px #FFF;
+		
+	}
+	body>header .tabs {
+		position: absolute;
+		bottom:0;
+	}
+	body>header .menu {
+		position:relative;
+		float:left;
+		clear: none;
+	}
+
+	
+	body>header .buttons {
+		position:absolute; bottom:10px; right:1%;
+	}
+	body>header .buttons a.btn {
+		margin:0;
+	}
+	body>header .buttons label {
+		color:#FFF;
+	}	
+	body>header .menu a, 
+	body>header .menu a.active,
+    body>header .menu a.current,
+	body>header .menu a.active.current,
+	body>header .menu a.active.current:hover
+	{
+		position: relative;
+		display:block; float:left; clear: none;
+		text-transform:uppercase;
+		font-variant:small-caps;
+		font-size:12px;
+		line-height:12px;
+		padding: 5px;
+		border-top-left-radius: 5px;
+		border-top-right-radius:5px;
+		width:auto;
+		font-weight:bold;
+		text-decoration:none;
+		margin:0 0 0 5px;
+		color: #FFF;
+		background-color:$graygreen;
+		
+	}
+	
+	
+	body>header .menu a.active, 
+	body>header .menu a.active:hover,
+	body>header .menu a.active.current, 
+	body>header .menu a.active.current:hover{
+		background-color:#FFF;
+		color: #000;
+		cursor:none;
+		
+	}
+	
+	
+	body>header .menu a:visited {
+		color: #FFF;
+		
+	}
+	body>header form {
+		float:left;
+		clear:none;
+		margin-top: 4px;
+		margin-right:20px;
+		
+	}
+
+/* footer*/		
+	body>footer {
+		
+		position:fixed; bottom:0; left:1%; z-index:100;
+		width:98%; height: $adminFixexFooter+px;
+		border-top: solid thin #000;
+		background-color:#FFF;
+		font-size:9px;
+	}
+	
+	body>footer>div { margin-top: 10px; }
+	body>footer .crumbs{ 
+		margin-right:40px;
+		display: inline;
+	}
+	body>footer div .crumbs a {  margin:0; }
+	
+	body>footer div strong {
+		margin-right:5px;
+	}
+	body>footer div a  {
+		margin-left:20px;
+	}
+  
+	body>footer .buttons {
+		position:absolute; top:5px; right:0;
+	}
+	
+
+	
+/*	form */	
+	@each $size,$marge in $fixedHeights {
+		form div.h#{$size}px {
+			margin-bottom:$marge+px;
+		}
+		form div.h#{$size}px label {
+			font-size:($size - $marge/2)+px;
+			line-height:$size+px;
+			top: ($size - ($size - $marge/2))/2+px;
+			left:($size + $marge/2)+px;
+		}
+		form span.h#{$size}px label {
+			
+			    display: table-cell;
+    			vertical-align: middle;
+
+			
+			font-size:($size - $marge/2)+px;
+			line-height:$size+px;
+			padding-bottom: ($size - ($size - $marge/2))/2+px;
+			padding-left:($size - ($size - $marge/2))/2+px;
+			padding-right:($size - ($size - $marge/2))+px;
+		}
+	}
+	
+/* Internal links */	
+   a[data-link-id*="reference"], a[data-link-id*="reference"]:visited {
+	   color: $purper;
+   }
+   a[data-link-id*="article"], a[data-link-id*="article"]:visited {
+	   color: $green;
+   }
+   a[data-link-id*="calculation"], a[data-link-id*="calculation"]:visited {
+	   color: $brown;
+   }
+    a[data-link-id*="note"], a[data-link-id*="note"]:visited {
+	   color: $grayblue;
+   }	
+		
+  .figuur {
+	   font-size:10px;
+	   font-style:italic;
+	   margin: 0 0 5px 0;
+   }
+   .figuur::before {
+	   content:'figuur';
+	   font-size:10px;
+	   font-style:italic;
+	   color: $grayblue;
+	   margin-right:5px;
+   }

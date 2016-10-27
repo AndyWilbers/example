@@ -1,0 +1,32 @@
+<!-- form.geolocation.html -->
+<a href="{$path_}my_observations?id={$record.ID}" class="button float-right margin-top-10" title="Terug.">terug</a>
+<form class="fe" action="" data-sa="submit:get_location;">
+	<h3>Bepaal de locatie</h3>
+	<p>Selecteer het gebied waar de bepalingen zijn gedaan in de onderstaande kaart, door
+	   eerst in te zoomen. Klik daarna op "toon kader". Het kader wat zichtbaar wordt heeft
+	   een rode marker in de rechter boven- en linker onderhoek. Verplaats deze naar de noordoost
+	   respectivelijk zuidwest punt van het gebied waar de bepalingen betrekking op hebben.
+	</p>
+	 <div id="canvas" class="square">
+    	<div  id="map"></div>
+        <div  id="area" class="hide">
+        	<div id="NE"></div>
+            <div id="SW"></div>
+        </div>
+     </div>
+     <a data-sa="geo.toggle_area" href="#" class="button" title="Klik om het selectie-kader te tonen." data-title="Klik om het selectie-kader te verbergen." data-txt="verberg kader">toon kader</a>
+	
+     <input type="hidden" name="NE_LAT" id="NE_LAT" value="{$record.NE_LAT}" />
+     <input type="hidden" name="NE_LNG" id="NE_LNG" value="{$record.NE_LNG}" />
+     <input type="hidden" name="SW_LAT" id="SW_LAT" value="{$record.SW_LAT}" />
+     <input type="hidden" name="SW_LNG" id="SW_LNG" value="{$record.SW_LNG}" />
+     <input type="hidden" name="ID" id="ID" value="{$record.ID}" />
+     
+      <input type="hidden" name="centre_LNG" id="centre_LNG" value="{$record.centre_LNG}" />
+      <input type="hidden" name="centre_LAT" id="centre_LAT" value="{$record.centre_LAT}" />
+      <input type="hidden" name="zoom" id="zoom" value="{$record.zoom}" />
+   
+	<button id="geo_save" class="hide">save</button>
+	<div id="msg"></div>
+</form>
+<!-- form.geolocation.html -->

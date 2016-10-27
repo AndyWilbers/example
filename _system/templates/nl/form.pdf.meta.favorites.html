@@ -1,0 +1,15 @@
+<!-- form.pdf.meta.favorites.html -->
+<a href="{$path_}rapportage" class="button float-right margin-top-10" title="Terug naar de favorieten.">terug</a>
+<form class="fe" method="POST" action="{$path_}pdf/favorites">
+	<label>Title:</label>
+	<input type="text"   name="title" id="title" value="{$meta.title}"/>
+	<label>Samensteller:</label>
+	<input type="text"   name="author" id="author" value="{$meta.author}"/>
+	<label>Opmerkingen:</label>
+	<textarea rows="10" cols="50" name="remarks" id="remarks">{$meta.remarks}</textarea>
+	<div id="msg"></div>
+	<input type="hidden" name="create" id="create" value ="create"/>
+	<div class="clearfix"></div>
+	<button class="margin-top-40">maak pdf</button>
+</form>
+<!-- form.pdf.meta.favorites.html -->

@@ -1,0 +1,59 @@
+<!-- form.observation.html -->
+{$header|t}
+<form id="{$table}-ar" class="admin w600" method="post" action="{$application_path}observation/save" data-callback="form.add_record"  >
+	<a class="btn" data-sa="reload">cancel</a>
+	<label><span>publicatie status</span><span data-sa="onClick:admin.toggle_publish;name:observation;id:{$ar.ID};" class="{$class_publish}"></span></label>
+	<h3 class="margin-top-20">ID: {$ar.ID}</h3>
+	<label >Naam</label>
+	<input  type="text" name="name" value ="{$ar.name}" placeholder="naam" required>
+	<label>Categorie</label>
+	{$select_category|t}
+	<label for="content">Omschrijving</label>
+	<textarea name="description" placeholder="text">{$ar.description}</textarea>
+	<div class="margin-top-20">
+		<nav class="tab{$type_class.value}"><span data-ce="type:radio;name:type;value:value;"  class= "ce-radio{$type_checked.value}"></span><label>invulveld</label></nav>
+		<nav class="tab{$type_class.check}{$type_class.radio}">
+			<span data-ce="type:radio;name:type;value:check;"  class= "ce-radio{$type_checked.check}" ></span><label>checklijst</label>
+			<span data-ce="type:radio;name:type;value:radio;"  class= "ce-radio{$type_checked.radio}" ></span><label>meerkeuze</label>
+		</nav>
+		<div class="clearfix"></div>
+	</div>
+	<div class="tab-container{$show_valuefields}" data-sa="name:type;value:y;">
+		<div class="float-25">
+			<label >min</label>
+			<input class="n20" type="text" name="min" value ="{$ar.min}" placeholder="minimum" data-default="NULL" >
+		</div>
+		<div class="float-25">
+			<label >max</label>
+			<input class="n20" type="text" name="max" value ="{$ar.max}" placeholder="maximum" data-default="NULL" >
+		</div>
+		<div class="float-25">
+			<label >default</label>
+			<input class="n20" type="text" name="default_value" value ="{$ar.default_value}" placeholder="default waarde" data-default="NULL" >
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="tab-container{$show_options}" data-sa="name:type;check:y;radio:y;">
+		<label>Opties</label>
+		<table id="observation_opt">
+			<thead>
+				<tr>
+					<th width="25px">positie</th>
+					<th width="15px">&nbsp;</th>
+					<th>label</th>
+					<th width="110px">waarde</th>
+					<th width="50px"><a href="#" data-sa="onClick:observation.option_new;" title="Klik om een nieuwe optie toe te voegen.">nieuw</a></th>
+				</tr>
+			</thead>
+			{$option_tbody|t}
+		</table>
+	</div>
+	<p class="msg ui-closed"></p>
+	<input type="submit" value="save">
+	<input type="hidden" name ="ID" value="{$ar.ID}"/>
+	<input type="hidden" name ="recordname" value="{$record_name}"/>
+	<input type="hidden" name ="model" value="observation"/>
+	<input type="hidden" name ="root_path" value="{$root_path}" />
+	<input type="hidden" name ="options_to_delete" value="" />
+</form>
+<!-- form.observation.html -->

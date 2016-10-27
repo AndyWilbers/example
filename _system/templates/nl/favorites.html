@@ -1,0 +1,14 @@
+<!-- favorites.html -->
+<h2>
+	<span class= "float-left">Favoriete artikelen</span>
+	<a  class="btn pdf float-left" href="{$path_}pdf/favorites" target="_self" title="Exporteer naar pdf."></a>
+	<a  data-fe="remove_all_favorites"  class="btn remove float-right" href="#" target="_self" title="Verwijder alle favorieten artikelen."></a>
+	<div class="clearfix"></div>
+</h2>
+<p>
+Hieronder het overzicht van de verzamelde favoriete artikelen. 
+</p>
+<div id="container-favorites">
+	{$favorites |t}
+</div>
+<!-- favorites.html -->

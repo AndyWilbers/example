@@ -1,0 +1,54 @@
+.figuur {
+	margin-bottom:3;
+	}
+p,img, ul,ol {
+	margin-bottom:0;
+	margin-top: 2;
+	}	
+h3 {margin-top: 5;}
+
+.icon {
+	width: 5;
+	height:5;
+	margin-right:2;
+	background-color:#A3AF26
+	}
+.icon.showmenu{ 
+	background-image:icon_menu.svg
+	}	
+.icon.help {
+	background-image:icon_info.svg
+	}
+.icon.reset{
+	background-image:icon_reset.svg;
+	background-color:#BC261F
+	} 
+.icon.save {
+	background-image:icon_save.svg;  
+	background-color:#BC261F
+	}
+.icon.imagsize{
+	background-image:icon_hr.svg
+	}
+.icon.imagsize.lr{
+	background-image:icon_lr.svg
+	}				
+.icon.account{
+	background-image:icon_account.svg
+	}
+.icon.account.logedin{
+	background-image:icon_account_black.svg
+	}	
+.icon.settings{
+	background-image:icon_settings.svg
+	}	
+.icon.location{
+	background-image:icon_location.svg
+	}
+.icon.device{
+	background-image:icon_desktop.svg
+	}
+.icon.device.mobile{
+	background-image:icon_mobile.svg
+	}
+	

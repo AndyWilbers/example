@@ -1,0 +1,53 @@
+/*	_assets/sass/_ce.scss */
+
+/*	classes for custom elements */
+
+	/*	ce-size */
+		@each $size,$marge in $fixedHeights {
+			.h#{$size}px .ce-radio{
+				width:$size+px;
+				height:$size+px;
+			}
+			.ce-radio.h#{$size}px, 
+			.ce-check.h#{$size}px, {
+				width:$size+px;
+				height:$size+px;
+			}
+			
+		}
+
+	/*	ce-radio */
+		.ce-radio {
+			width:12px;
+			height:12px;
+			background-image:url(img/ce/radio_unchecked.svg);
+			background-position:center;
+			background-repeat:no-repeat;
+			background-size:cover;
+			display:inline-block;
+		}
+		.ce-radio:hover {cursor:pointer; }
+		.ce-radio.checked { background-image:url(img/ce/radio_checked.svg);}
+		.ce-radio:hover { background-image:url(img/ce/radio_unchecked_hover.svg); }
+		.ce-radio.checked:hover { background-image:url(img/ce/radio_checked_hover.svg);}
+		
+		.admin .ce-radio { background-image:url(img/ce/radio_admin_unchecked.svg); }
+		.admin .ce-radio.checked { background-image:url(img/ce/radio_admin_checked.svg);}
+		.admin .ce-radio:hover { background-image:url(img/ce/radio_admin_checked.svg); }
+		.admin .ce-radio.checked:hover { background-image:url(img/ce/radio_admin_checked.svg);}	
+
+
+	/*	ce-check */
+		.ce-check {
+			width:12px;
+			height:12px;
+			background-image:url(img/ce/check_unchecked.svg);
+			background-position:center;
+			background-repeat:no-repeat;
+			background-size:cover;
+			display:inline-block;
+		}
+		.ce-check:hover {cursor:pointer; }
+		.ce-check.checked { background-image:url(img/ce/check_checked.svg);}
+		.ce-check:hover { background-image:url(img/ce/check_unchecked_hover.svg); }
+		.ce-check.checked:hover { background-image:url(img/ce/check_checked_hover.svg);}

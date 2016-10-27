@@ -1,0 +1,209 @@
+/*	_assets/sass/_classes.admin.scss */
+
+/*	Classes: for admin */
+	.vr,  .hr { background-color: $blue; }
+
+/*	.menu */
+	.menu a {
+		width:80%;
+	}
+
+
+/*	.box */
+	.box {
+		
+		position:fixed;
+		z-index: 999;
+		left: 50%; 	width:  512px;	margin-left: -256px;
+		top:  35%;	min-height: 256px;	margin-top:	 -128px;
+		
+		border-radius:3px;
+		border: solid thin $shadegreen;
+		background-color:#FFF;
+		background-image:url(../../sleutels/css/img/logo.svg);
+		background-repeat:no-repeat;
+		background-position: 436px 180px;
+		background-size: 64px 64px;
+		box-shadow: 10px 10px 5px #888888;
+	
+	
+	}
+	.box.large {
+		
+		left: 50%; 	width:  980px;	margin-left: -490px;
+		top:  50px;	min-height: 600px;	margin-top:	 0;
+	    border-radius:5px;
+	
+	}
+	
+	.box>.btn.close {
+		position:absolute;
+		top: 8px;right:8px;
+	}
+	
+	.box>.inner {
+	
+		margin-top:36px ;
+		width:440px;
+	}
+	
+	.box.large>.inner{
+		
+		width:940px;
+	}
+		 
+	
+	.box label,  .box input {
+		width:80%;
+		display:block;
+		clear:both;
+		
+	}
+	
+	.box input {
+		margin-bottom:20px;
+		
+	}
+	.box label,  {
+	font-size: 0.8em;
+	
+		
+	}
+	.box.admin  label{
+	font-size: 10px;
+	font-weight:normal;
+	color: $blue;
+	
+	
+		
+	}
+	
+	.box.admin input, .box.admin select, .box.admin label, .box.admin textarea, .box.admin p.msg {
+		color: $blue;
+		width:95%;
+		margin:0 auto 10px 0;
+		
+	}
+	
+	.box.admin select {
+		border:none;
+		width:95%;
+		background-color:$grayblue;
+		color: #FFF;
+		font-size:10px;
+		padding:3px;
+	}
+	.box.admin select option {
+		padding:2px;
+		
+		
+	}
+	
+	.box.admin select option[selected="selected"] {
+		background-color:$red;
+		font-weight:bold;
+		
+	}
+	
+	.box.admin label{
+		margin-bottom:3px;
+	}
+	
+	.box.admin p.msg {
+		margin-left: 0px;
+		max-width: 600px;
+		min-height:50px;
+	}
+
+	
+	 .box.admin input, form.admin select,  .box.admin textarea, .box.admin p.msg {
+		 border: solid thin $grayblue;
+		display:block;
+		padding: 3px;
+		border-radius:3px;
+		margin-bottom:10px;	
+		font-size:10px;		
+	}
+	
+	 .box.admin p.msg.ui-closed {
+		 display:none;
+		 
+	 }
+	
+	
+	
+	.box.admin textarea{
+		min-height:100px;
+		max-height:300px;
+		width:100%;
+		min-width:100%;
+	
+	}
+	
+	.box.admin .btn, .box.admin .btn:visited {
+		display: inline-block;
+		padding: 3px;
+		border-radius:3px;
+		margin-bottom:10px;	
+		font-size:10px;
+		font-weight:bold;
+		text-transform:lowercase;
+		color:#FFF;
+		background-color: $grayblue;
+		
+	}
+	
+	.box.admin .btn.close, .box.admin .btn.close:hover {
+		 width:10px; height:10px;
+		 background-color: $red;
+	}
+	
+	.box.admin .btn:hover {
+		background-color: $blue;
+		
+	}
+	
+   
+	
+	.group {
+		position:relative;
+	}
+	
+	.btn.slide, .btn.text, .btn.change {
+	
+		display:block;
+		position:relative;
+		
+		width: 12px;
+		height:12px;
+		border-radius:2px;
+
+		background-size:100% 100%;
+		background-position:center;
+		margin:0;
+		
+	}
+	.btn.slide { background-image:url(img/icon_slide_down.svg);}
+	.btn.text { background-image:url(img/icon_text.svg);}
+	.btn.change { background-image:url(img/icon_settings.svg);}
+	
+	.btn.slide.up {
+		background-image:url(img/icon_slide_up.svg);
+		
+	}
+	.group>.btn.slide {
+		display:block;
+		position:absolute;
+		top: 5px;right:3px;
+	
+		
+	}
+	
+	
+	.slide-container {
+		position:relative;
+		padding-top:5px;
+		padding-bottom:5px;
+		margin-top:5px;
+		overflow:hidden;
+	}

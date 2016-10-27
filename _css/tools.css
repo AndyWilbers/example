@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* _css/tools.css */
+
+body.tools {
+	width:95%;
+	margin: 20px auto 20px auto;
+	background-color:#CCC;
+}
+
+block {
+	display:block;
+	clear: both;
+	float:none;
+}
+	
+
+
+

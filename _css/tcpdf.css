@@ -1,0 +1,42 @@
+h1{ font-size:24px; font-weight:bold }
+
+h2{ 
+	font-size:18px; 
+	color: $green;
+	font-weight:bold
+}
+
+h3 				{ font-weight:	bold }	
+h4, h5, h6 		{ font-weight:	normal }
+h5 				{ color: 		#006888 }
+h6				{ color:		#006888 }
+	
+a, a:visited,a:hover {
+	text-decoration:none;
+	color:#006888;
+	font-weight:bold
+}
+	
+span.note,span.reference{
+	font-size:0.9em;
+	font-weight:bold;
+	color:#A3AF26
+}
+
+.figuur{
+	font-size:0.9em;
+	font-style:italic
+}
+
+.pdf-list-header{
+	font-weight:bold;
+}
+
+.author{ font-weight:bold;}
+.pages { color:#777;}
+
+.obs-value {
+	font-weight:bold; 
+	font-size:1.2em;
+	color: #006888 
+}

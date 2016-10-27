@@ -1,0 +1,52 @@
+/*	_assets/sass/_fe.listitem.scss */
+
+
+
+
+/* Standard list*/
+	.list-item{
+		position:relative;	
+		display:block;
+		width:100%;
+		max-width:400px;
+		margin-bottom:5px;
+	}
+	 .list-item h3{
+		 color: $blue;
+		 font-size:11px;
+		 font-weight:bold;
+		 padding:0;
+		 margin:0 0 3px 0;
+	 }
+	 
+	  .list-item p{
+		 font-size:11px;
+		 line-height:1.2;
+		 padding:0;
+		 margin:0 ;
+	 }
+		 
+		 
+/* Reference list*/
+   .list-item-reference{
+		 font-size:10px;
+		 line-height:1;
+		 padding:0;
+		
+		 display: table-row;
+		
+		
+		
+	}
+	.list-item-reference>span {
+		 display: table-cell;
+		 padding-bottom:3px;
+		 
+		 
+	}
+		
+	.list-item-reference .author{ font-weight:bold;}
+    .list-item-reference .pages, 
+	.list-item-reference .reference{ color:#777;}
+
+  .list-item-reference .reference{ padding-right:5px;}

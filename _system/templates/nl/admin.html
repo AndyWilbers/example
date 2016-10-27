@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="admin{$classHtml} max-width-1280 margin-h-auto" data-sa="path:{$path};application:{$application};">
+    <head>
+    <meta charset="UTF-8">
+    <title>{ $title }-admin</title>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="icon" type="image/png" sizes="96x96" href="{$path}favicon-96x96.png">
+    <script src="{$path}_js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="{$path}_css/vendor/normalize.css" >
+    <link rel="stylesheet" href="{$path}_css/admin.style.min.css" >
+    { $css | t }
+    </head>
+    <body{ $classBody }>
+    	<header{$hide}>
+    		<h1>{$title}</h1>
+    	</header>
+        <div class="main">
+			{ $content | t }
+        </div>
+        <footer{$hide}>
+        	<div class= "align-l">
+	        	<strong>locatie:</strong>
+	       		{$crumb|t}
+        	</div>
+        	<p class="align-r">
+        	<strong>user:&nbsp;</strong><a title="Wijzig persoonlijke gegevens" target="_self" href ="{$path}admin/my_account">{$user.name}</a>&nbsp;({$user.role})
+        		<a href ="{$path}admin/logout" target="_self" title="KLik om af te sluiten.">logout</a>
+        	</p>
+        </footer>
+        { $box|t }
+        <!-- Javascript libraries: -->
+        <script src="{$path}_js/vendor/jquery-1.11.3.min.js" ></script>
+        { $js_extern | t}
+        <script src="{$path}_js/admin.script.min.js"></script>
+        { $js | t }
+        <script src="{$path}_js/admin.docready.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+/*	_assets/sass/_calculation.scss */
+
+/*	Styling for a calculation */
+
+.input{
+	
+	padding:5px;
+	width: 96%;
+	margin: 0 auto 10px 0;
+
+	border: solid thin $blue;
+
+	
+}
+
+
+
+.input .observation {
+	
+	padding:0;
+	width: 100%;
+	margin: 5px auto 0 auto;
+	border:none;
+
+
+	
+	
+}
+
+.input .observation label {
+	margin: 2px 0 0 0;
+}

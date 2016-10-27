@@ -1,0 +1,27 @@
+<!-- template: fe.new.account.activate.html -->
+<form id="login" class="fe" action="{$path}activate_account" method="post"> 
+	<div class="grid G12">
+		<div class="col  W12">   	
+	
+			<h2>{$title}<span class="sub">{$entry}</span></h2>
+			<label for="email" >Email</label>
+			<input type="email"  id="email" name ="email" placeholder="email" required value="{$email}" />
+			
+			<label for="code" >Activeer code</label>
+			<input type="text"  id="code" name ="code" placeholder="vul hier de activeringscode in"  value="{$code}" required />
+		
+			<label for="password" >Wachtwoord</label>
+			<input type="password"  id="password" name ="password" value="" placeholder="wachtwoord" required />
+			
+			<label for="password_check" >Herhaal wachtwoord</label>
+			<input type="password"  id="password_check" name ="password_check" value=""  placeholder="herhaal wachtwoord" required />
+			
+			<p class="msg">{$msg}</p>
+	
+			<button type="submit" class="btn">activeer</button>
+			<div class="clearfix"></div>
+			<input type="hidden" name="state" value ="activate"/>
+		</div>
+	</div>
+</form>
+<!-- END template: fe.new.account.activate.html -->

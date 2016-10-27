@@ -1,0 +1,25 @@
+<!-- form.images.popup.html -->
+<div id ="popup_image_upload" class= "ui-closed">
+	 <form action="{$home_}image/upload" method="post" enctype="multipart/form-data">
+	  <label>selecteer afbeelding</label> 
+	  <input  type="file" name="img[]" multiple>
+	  <input class="btn" type="submit" value="load up">
+	</form> 
+</div>
+<div id ="popup_image_delete" class= "ui-closed">
+	 <h1>delete image</h1>
+</div>
+<div id ="popup_image_move" class= "ui-closed">
+	 <h1>Verplaats de geselecteerde agbeeldingen</h1>
+	 <select>
+	 	{$options |t}
+	 </select>
+	 <nav class="btn"  title="Klik om de afbeeldingen te verplaatsen.">verplaats</nav>
+</div>
+<div id ="popup_dir_new" class= "ui-closed">
+	 <h2>Voeg een nieuwe directory toe</h2>
+	 <label>naam</label>
+	 <input  type="text" name="name"  placeholder="alleen letters, cijfers en _"/>
+	 <nav class="btn"  title="Klik om directory aan te maken">maak aan </nav>
+</div>
+<!-- form.images.popup.html -->

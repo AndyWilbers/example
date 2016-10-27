@@ -1,0 +1,93 @@
+/*	_assets/sass/_classes.btn.scss */
+
+/*	.btn: */
+
+	.btn:hover { cursor:pointer; }
+		
+		
+	/*	.btn.close: */
+		.btn.close {
+			background-color:$red;
+			width: 18px;
+			height:18px;
+			border-radius:9px;
+			padding:0;
+		
+			background-image:url(img/pict_close_white.svg);
+			background-size:90% 90%;
+			background-position:center;
+			
+		}
+		.btn.close:hover{
+		
+			background-image:url(img/pict_close_black.svg);
+			background-color:$red;
+		}
+		
+	    .btn.help{ background-image:url(img/icon_info.svg); }
+	    .btn.favorite{ 
+			background-image:url(img/icon_save.svg); 
+			background-color:$red;
+			margin:0;
+			margin-top:-2px;
+			margin-right:-2px;
+		 }
+	    .btn.previous{ background-image:url(img/icon_return.svg); }
+		
+		
+		
+		
+/* icons,  .btn without function */
+
+	.icon::before {
+		
+		content:'';
+		display: block;
+		clear:none;
+		float:left;
+	
+		background-position:center;
+		background-size:contain;
+		background-repeat:no-repeat;
+		
+		width:22px;
+		height:22px;
+		background-color:$green;
+		position: absolute;
+		margin-left:-30px
+	
+	
+		
+	}
+	
+	.icon::after  {
+		content:'';
+		display:block;
+		float:none;
+		clear:both;
+	}
+	
+	.icon {
+		display: block;
+		width:90%;
+		padding-left:30px;
+		min-height:25px;
+	}
+	
+		
+	.icon.showmenu::before{ background-image:url(img/icon_menu.svg); }	
+    .icon.help::before{ background-image:url(img/icon_info.svg); }
+    .icon.reset::before {background-image:url(img/icon_reset.svg);background-color:$red;}
+	 
+	.icon.save::before{ background-image:url(img/icon_save.svg);  background-color:$red;}
+
+    .icon.imagsize::before{ background-image:url(img/icon_hr.svg); }
+	.icon.imagsize.lr::before{ background-image:url(img/icon_lr.svg)};				
+    .icon.account::before{background-image:url(img/icon_account.svg);}
+	.icon.account.logedin::before{background-image:url(img/icon_account_black.svg);}	
+	.icon.settings::before{background-image:url(img/icon_settings.svg);}	
+	.icon.location::before{background-image:url(img/icon_location.svg);}
+	.icon.device::before{ background-image:url(img/icon_desktop.svg); }
+	.icon.device.mobile::before{ background-image:url(img/icon_mobile.svg)};		
+		
+	 

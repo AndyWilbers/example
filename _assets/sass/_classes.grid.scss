@@ -1,0 +1,133 @@
+/*	_assets/sass/_classes.grid.scss */
+
+/*	Grid classes: settings*/
+
+	$grids: (12);					/* grid system */
+	$grids_vb: (1,2,3,4);			/* width of vertical bars */
+	$grids_m: 1;					/* horizontal margin in % */
+	$grids_mV: 10;					/* vertical margin in pixels */
+	
+	
+	$grids_Wcol: ( 100 - 2 * $grids_m )  ;
+	$grids_Wi: ( 100 - $grids_m )    ;
+	$grids_mVi: $grids_mV / 2   ;
+	
+	.grid {
+		position:		relative;
+		width: 			100%; 
+		margin: 		0 auto 0 auto;
+	}
+	.grid:after, .grid:before {
+		content:"";
+		display:table;
+		clear:both;
+		float:none;
+	}
+	
+	
+	
+	.grid>.col { 
+		position:relative;
+		float:			left;
+		clear:			none;
+		margin-top:     0px;
+		margin-bottom:  0px;
+	
+		margin-left: 	( $grids_m /2 ) *1%;
+		margin-right: 	( $grids_m /2 ) *1%;
+		width:			$grids_Wcol * 1% ;
+		
+	}
+	
+	.grid>.col:first-child {
+		margin-left: 	 $grids_m *1%;
+	
+	}
+		
+	
+	.grid .col>.inner {
+		float:			left;
+		margin-top:     $grids_mVi+px;
+		margin-bottom:  $grids_mVi+px;
+		margin-left: 	1%  * (100 - $grids_Wi)/2;
+		margin-right: 	auto;
+		width:			$grids_Wi * 1% ;
+	}
+	
+	
+	@each $n in $grids {
+		
+		$grids_Wcoln:  (100 - ($n + 1) * $grids_m) / $n ;
+		$grids_Win:  100 + $grids_Wcol * ( $grids_Wi - 100 )  / $grids_Wcoln ;
+		
+		.grid.G#{$n}>.col {
+			width: $grids_Wcoln * 1%;
+		}
+		
+		.grid.G#{$n}>.col>.inner {
+			margin-left: 	1%  * (100 - $grids_Win)/2;
+			width:		$grids_Win* 1% ;
+		}
+		
+		@for $w from 2 through $n {
+			
+			$grids_Wcolw: $w * $grids_Wcoln + ($w - 1) * $grids_m;
+			
+			.grid.G#{$n}>.col.W#{$w}{ 
+				width: $grids_Wcolw * 1%;
+			}
+			
+			.grid.G#{$n}>.col.W#{$w}>.inner {
+				
+				$gridsWidthInner :( 100 +  $grids_Wcoln * ( $grids_Win - 100 ) / $grids_Wcolw  );
+				margin-left: 	1%  * (100 - $gridsWidthInner)/2;
+				width: $gridsWidthInner * 1% ;
+				
+			}
+		}
+		
+		.grid>.vr { 
+			position:absolute;
+			display:none; 
+			visibility:hidden;
+			top:     	0px;
+			bottom:  	0px;
+
+		}
+		
+		
+		
+		
+		@for $w from 1 through ( $n - 1) {
+			
+			.grid.G#{$n}>.col.O#{$w}{ 
+				margin-left: 	( ( 100 * $w / $n ) + $grids_m * ($n/2 - $w) / $n ) *1%;
+			}
+			.grid.G#{$n}>.col.O#{$w}:first-child {
+				margin-left: 	( $grids_m/2 + ( 100 * $w / $n ) + $grids_m * ($n/2 - $w) / $n ) *1%;
+			}
+			
+			
+		}
+		
+		@for $p from 0 through $n  {
+			
+			
+			@each $wbw in $grids_vb {
+				.grid.G#{$n}>.vr.P#{$p}.W#{$wbw} {
+					display:block; 
+					visibility:visible;
+					width:			$wbw+px; 
+					margin-left: 	( ( 100 * $p / $n ) + $grids_m * ($n/2 - $p) / $n ) *1%;
+					left: 			(-1 * $wbw/2)+px;
+				
+				}
+		
+				
+			}
+			
+			
+			
+		}
+		
+	}

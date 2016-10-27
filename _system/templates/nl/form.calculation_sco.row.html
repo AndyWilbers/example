@@ -1,0 +1,26 @@
+<!-- form.calculation_sco.row.html -->
+<tr data-sa="row:sco;indx:{$i};"">
+	<td width="5px" class="h1 obn_blue bold txt-r">&ge;</td>
+	<td width="25px" >
+		<input class="n4" name="sco_{$i}_GE" value ="{$record.GE}" placeholder="getal"  type="text">
+	</td>
+	<td width="5px" class="h1 obn_blue bold txt-r">&lt;</td>
+	<td width="25px" >
+		<input class="n4" name="sco_{$i}_LT" value ="{$record.LT}" placeholder="getal"  type="text">
+	</td>
+	<td>
+		<select name="sco_{$i}_FID_SCORE" value="{$record.FID_SCORE}">
+			{$options|t}
+		</select>					
+	</td>
+	<td class="txt-r" width="15px">
+		<a href="{$path_}admin/articles/{$record.article.href}"  target="neighbour" data-link="sco_{$i}_FID_ARTICLE" title="{$record.article.title}" data-title="{$record.article.data_title}">{$record.FID_ARTICLE_txt}</a>
+	</td>	
+	<td width="15px">
+		<a class="btn change" data-sa="onClick:calculation.popup.get;name:sco_{$i}_FID_ARTICLE;" href="#" title="Selecteer een ander artikel" ></a>
+		<input type="hidden" name ="sco_{$i}_FID_ARTICLE" value="{$record.FID_ARTICLE}"/>
+	</td>				
+	<td><a data-sa="onClick:calculation.scores.remove;row:sco;indx:{$i};" href="#" title="Klik om deze sore te verwijderen." data-label="herstel" data-title="Klik om verwijderen ongedaan te maken." >verwijder</a></td>
+	<td>&nbsp;</td>
+</tr>
+<!-- form.calculation_sco.row.html -->

@@ -1,0 +1,35 @@
+<!-- form.my_account.html -->
+<a href="{$path}logout" class="button float-right margin-top-10">uitloggen</a>
+<div class="clearfix"></div>
+<form id="my-account-ar" class="fe margin-top-20"  method="post" action="{$path}my_account/save" >
+  
+	<label >Email</label>
+	<input  type="email" id ="email" name="email" value ="{$ar.email}" placeholder="email" >
+
+	<label >Voornaam</label>
+	<input  type="text" name="firstName" value ="{$ar.firstName}" placeholder="voornaam" >
+	<label >Tussenvoegsel</label>
+	<input  type="text" name="midName" value ="{$ar.midName}" placeholder="tussenvoegsel" >
+	<label >Achternaam</label>
+	<input  type="text" name="lastName" value ="{$ar.lastName}" placeholder="achternaam" >
+	<label >Wachtwoord</label>
+	<input  type="password" name="password_new" value ="" placeholder="wachtwoord">
+	<label >Herhaal wachtwoord</label>
+	<input  type="password" name="password_check" value ="" placeholder="herhaal wachtwoord">
+	<label >Account zichtbaar voor anderen</label>
+	<div class="ce-check h20px{$ar.showName_checked}" data-ce="name:showName;"></div>
+	<input type="hidden" id="showName" name ="showName" value="{$ar.showName}"/>
+	<label >Toestemming voor gebruik van opgelagen observaties</label>
+	<p>
+		Hieronder kunt u aangeven of u de VBNE toestemming geeft voor het gebruiken
+		van de door u opgslagen observaties voor onderzoek naar natuurkwaliteit.
+	</p>
+	<div class="ce-check h20px{$ar.shareObservations_checked}" data-ce="name:shareObservations;"></div>
+	<input type="hidden" id="shareObservations" name ="shareObservations" value="{$ar.shareObservations}"/>
+	<p class="msg{$warning}">{$msg}</p>
+	<button type="submit" class="btn">save</button>
+	<input type="hidden" name ="model" value="user"/>
+	<input type="hidden" name ="ID" value="{$ar.ID}"/>
+</form>
+ <a id= "delete" href="{$path}my_account/delete" class="button float-right margin-top-10">verwijderen</a>
+<!-- form.my_account.html -->

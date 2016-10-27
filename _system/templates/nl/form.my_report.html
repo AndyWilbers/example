@@ -1,0 +1,13 @@
+<!-- form.my_report.html -->
+<a href="{$path_}my_reports" class="button float-right margin-top-10" title="Terug naar het overzicht.">mijn sets met favoriete artikelen</a>
+<form class="fe" action="save_my_report">
+	<label>Naam</label>
+	<input type="text"   nmae="name" id="name" value="{$record.name}"/>
+	<label>Deel met:</label>
+	<table>
+		{$viewers|t}
+	</table>
+	<input type="hidden" name="ID" id="ID" value ="{$record.ID}"/>
+	<button>save</button>
+</form>
+<!-- form.my_report.html -->

@@ -1,0 +1,20 @@
+<!-- form.category.add.html -->
+<form id="{$table}-category-add" class="admin add max-width-400 ui-closed" action="{$application_path}admin/save_category" data-callback="form.save_category" method="POST">
+	<a class="btn" data-sa="reload">cancel</a>
+	<label><span>publicatie status</span><span data-sa="onClick:admin.toggle_publish;name:article;id:new;" class="publish not block margin-bottom-10"></span></label>
+	<br/>
+	<label>Naam</label>
+	<input name="name" type="text" value ="" placeholder="naam" required>
+	<label>Path</label>
+	<input name="path" type="text" value ="" placeholder="alleen letters, cijfers en &#34;_&#34;" pattern="^[_a-zA-Z0-9]+$">
+	<label{$hide_position}>Positie</label>
+	{$select_position|t}
+	<p class="msg ui-closed"></p>
+	<input type="submit" value="maak aan">
+	<input type="hidden" name ="PARENT_ID" value="{$ar.ID}"/>
+	<input type="hidden" name ="table" value="{$table_cat}"/>
+	<input type="hidden" name ="recordname" value="{$record_name}"/>
+	<input type="hidden" name ="root_path" value="{$root_path}"/>
+	<input type="hidden" name ="ID" value="new"/>
+</form>
+<!-- form.category.add.html -->

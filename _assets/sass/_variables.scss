@@ -1,0 +1,26 @@
+/*	_assets/sass/_variables.scss */
+
+	$maxWidth: 1280;
+	
+
+/*	Colors: */
+	$gray		:	#888888;
+	$accent		:   #BC261F;
+	
+/*	Colors VBNE	: */
+	$green 		:	#A3AF26;		
+	$blue 		:	#006888;		
+	$brown 		: 	#953E07;	
+	$purper 	:	#8A1FBC;		
+	$red  		:	#BC261F;		
+	$shadegreen	:	#C8CF7D;
+ 	$shadeblue 	:	#D0F4F4;
+	$graygreen	:	darken(desaturate($green , 50%),10%);
+	$grayblue	:	lighten(desaturate($blue , 80%),40%);
+	
+/*	Fixed heights in pixels: */	
+	$fixedHeights: (12:4,16:6, 20:8, 30:12, 40:16);
+	
+/*	Admin pages */	
+	$adminFixexHeader:	40;
+	$adminFixexFooter:	40;

@@ -1,0 +1,29 @@
+<!-- form.note.html -->
+{$header|t}
+<form id="{$table}-ar" class="admin" method="post" action="{$application_path}notes/save" data-callback="form.add_record">
+    <div class= "w600">
+		<a class="btn" data-sa="reload">cancel</a>
+		<label><span>publicatie status</span><span data-sa="onClick:admin.toggle_publish;name:note;id:{$ar.ID};" class="{$class_publish}"></span></label>
+		<h3 class="margin-top-20">ID: {$ar.ID}</h3>
+		<label >Naam</label>
+		<input  type="text" name="name" value ="{$ar.name}" placeholder="naam" required>
+		<label >Path</label>
+		<input  type="text" name="path" value ="{$ar.path}" placeholder="alleen letters, cijfers en &#34;_&#34;" pattern="^[_a-zA-Z0-9]+$">
+		<label>Categorie</label>
+		{$select_category|t}
+	</div>
+	<label for="content">Text</label>
+	<div class= "ident-10">
+		
+		<textarea id="description" name="description" placeholder="text">{$ar.description}</textarea>
+	</div>
+	<div class= "w600">
+		<p class="msg ui-closed"></p>
+		<input  type="submit" value="save">
+	</div>
+	<input type="hidden" name ="ID" value="{$ar.ID}"/>
+	<input type="hidden" name ="recordname" value="{$record_name}"/>
+	<input type="hidden" name ="table" value="note"/>
+	<input type="hidden" name ="root_path" value="{$root_path}" />
+</form>
+<!-- form.note.html -->
